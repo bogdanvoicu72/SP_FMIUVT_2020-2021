@@ -1,65 +1,32 @@
 import java.util.ArrayList;
 
-public class Book {
-    private String name;
+public class Book extends Element{
+    private String title;
+    private ArrayList<Author> authors = new ArrayList<Author>();
+    private TableOfContents tableOfContents;
+    private ArrayList<Chapter> chapters = new ArrayList<Chapter>();
 
-    private ArrayList<String> paragraphs = new ArrayList<String>();
-    private ArrayList<String> images = new ArrayList<String>();
-    private ArrayList<String> tables = new ArrayList<String>();
-
-    public Book() {
-
+    public void print(){
+        System.out.println("Book name: " + title);
     }
 
-    public Book(String name) {
-        this.name = name;
+    public Book(String title) {
+        this.title = title;
     }
 
-    public void createNewParagraph(String paragraph)
+    public void addAuthor(Author author)
     {
-        paragraphs.add(paragraph);
+        this.authors.add(author);
     }
 
-    public void createNewImage(String image)
+    public int createChapter(String chapterName) {
+        Chapter createdChapter = new Chapter(chapterName);
+        this.chapters.add(createdChapter);
+        return this.chapters.indexOf(createdChapter);
+    }
+
+    public Chapter getChapter(int index)
     {
-        images.add(image);
-    }
-
-    public void createNewTable(String table)
-    {
-        tables.add(table);
-    }
-
-    public void print()
-    {
-        System.out.println("Book Name: " + name);
-        System.out.println("Paragraphs:");
-
-        for (String p : paragraphs)
-        {
-            System.out.println("\t" + p);
-        }
-        System.out.println("Images:");
-        for (String i : images)
-        {
-            System.out.println("\t" + i);
-        }
-        System.out.println("Tables:");
-        for (String t : tables)
-        {
-            System.out.println("\t" + t);
-        }
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public ArrayList<String> getParagraphs() {
-        return paragraphs;
+        return this.chapters.get(index);
     }
 }
