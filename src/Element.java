@@ -1,3 +1,9 @@
-public interface Element {
-    public void print();
+public class Element {
+    public Element() {
+
+    }
+
+    public void print() {
+
+    }
 }

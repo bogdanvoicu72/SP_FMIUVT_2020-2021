@@ -1,9 +1,9 @@
-public class Image implements Element{
+public class Image extends Element{
     private String imageName;
 
     public void print()
     {
-        System.out.println("\t\t\t\tImage: " + imageName);
+        System.out.println("\t\tImage: " + imageName);
     }
 
     public Image(String imageName) {

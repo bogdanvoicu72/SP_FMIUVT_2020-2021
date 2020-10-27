@@ -1,22 +1,21 @@
 public class Main {
     public static void main(String[] args) throws Exception {
-        Book noapteBuna = new Book("Noapte buna, copii!");
+        Book discoTitanic = new Book("Disco Titanic");
         Author rpGheo = new Author("Radu Pavel Gheo");
-        noapteBuna.addAuthor(rpGheo);
-        Section cap1 = new Section("Capitolul 1");
-        Section cap11 = new Section("Capitolul 1.1");
-        Section cap111 = new Section("Capitolul 1.1.1");
-        Section cap1111 = new Section("Subchapter 1.1.1.1");
-        noapteBuna.addContent(new Paragraph("Multumesc celor care au facut posibila......"));
-        noapteBuna.addContent(cap1);
+        discoTitanic.addAuthor(rpGheo);
+        int indexChapterOne = discoTitanic.createChapter("Capitolul 1");
+        Chapter chp1 = discoTitanic.getChapter(indexChapterOne);
+        int indexSubChapterOneOne = chp1.createSubChapter("Subcapitolul 1.1");
 
-        cap1.add(new Paragraph("Moto capitol"));
-        cap1.add(cap11);
-        cap11.add(new Paragraph("Text from subchapter 1.1"));
-        cap11.add(cap111);
-        cap111.add(new Paragraph("Text from subchapter 1.1.1"));
-        cap111.add(cap1111);
-        cap1111.add(new Image("Image subchapter 1.1.1.1"));
-        noapteBuna.print();
+        SubChapter scOneOne = chp1.getSubChapter(indexSubChapterOneOne);
+        scOneOne.createNewElement("paragraph", "Paragraph 1");
+        scOneOne.createNewElement("paragraph", "Paragraph 2");
+        scOneOne.createNewElement("paragraph","Paragraph 3");
+        scOneOne.createNewElement("paragraph","Paragraph 4");
+        scOneOne.createNewElement("paragraph","Paragraph 5");
+        scOneOne.createNewElement("image","Image 1");
+        scOneOne.createNewElement("table", "Table 1");
+
+        scOneOne.print();
     }
 }

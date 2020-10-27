@@ -1,11 +1,11 @@
 import java.util.ArrayList;
 
-public class Chapter implements Element{
+public class Chapter extends Element{
     private String name;
     private ArrayList<SubChapter> subChapters = new ArrayList<SubChapter>();
 
     public void print() {
-        System.out.println("\tChapter: " + name);
+        //System.out.println("\tChapter: " + name);
     }
 
     public Chapter(String name) {
