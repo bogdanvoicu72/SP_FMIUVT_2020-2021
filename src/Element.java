@@ -1,9 +1,3 @@
-public class Element {
-    public void print() {
-
-    }
-
-    public Element() {
-
-    }
+public interface Element {
+    public void print();
 }

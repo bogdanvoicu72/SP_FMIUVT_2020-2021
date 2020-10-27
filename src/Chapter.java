@@ -1,6 +1,6 @@
 import java.util.ArrayList;
 
-public class Chapter extends Element{
+public class Chapter implements Element{
     private String name;
     private ArrayList<SubChapter> subChapters = new ArrayList<SubChapter>();
 
