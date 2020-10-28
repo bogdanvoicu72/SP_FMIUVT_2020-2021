@@ -5,6 +5,7 @@ public class Book extends Element{
     private ArrayList<Author> authors = new ArrayList<Author>();
     private TableOfContents tableOfContents;
     private ArrayList<Chapter> chapters = new ArrayList<Chapter>();
+    private ArrayList<Element> elements = new ArrayList<Element>();
 
     public void print(){
         //System.out.println("Book name: " + title);
@@ -13,6 +14,10 @@ public class Book extends Element{
 
     public Book(String title) {
         this.title = title;
+    }
+
+    public void addContent(Element element) {
+        elements.add(element);
     }
 
     public void addAuthor(Author author)
