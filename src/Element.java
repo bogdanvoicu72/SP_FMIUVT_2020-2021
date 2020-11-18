@@ -1,8 +1,4 @@
-public class Element {
-    public Element() {
-
-    }
-    public void print() {
-
-    }
+public interface Element {
+    void print();
+    void accept(Visitor visitor);
 }

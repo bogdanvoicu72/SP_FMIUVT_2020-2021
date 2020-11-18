@@ -1,6 +1,6 @@
 import java.util.ArrayList;
 
-public class Book extends Element{
+public class Book{
     private String title;
     private ArrayList<Author> authors = new ArrayList<Author>();
     private TableOfContents tableOfContents;

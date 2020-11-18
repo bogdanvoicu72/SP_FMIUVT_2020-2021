@@ -1,6 +1,6 @@
 import java.util.concurrent.TimeUnit;
 
-public class Image extends Element{
+public class Image implements Element{
     private String imageName;
 
     public void print()
@@ -16,4 +16,9 @@ public class Image extends Element{
             e.printStackTrace();
         }
     }
+
+    public void accept(Visitor visitor) {
+        visitor.visit(this);
+    }
+
 }

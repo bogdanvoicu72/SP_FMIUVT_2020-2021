@@ -1,4 +1,4 @@
-public class Table extends Element {
+public class Table implements Element {
     private String title;
 
     public void print()
@@ -8,5 +8,9 @@ public class Table extends Element {
 
     public Table(String title) {
         this.title = title;
+    }
+
+    public void accept(Visitor visitor) {
+        visitor.visit(this);
     }
 }

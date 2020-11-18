@@ -1,4 +1,4 @@
-public class ImageProxy extends Element{
+public class ImageProxy implements Element{
     private String url;
     private Integer dim;
     private Image realImage;
@@ -14,6 +14,10 @@ public class ImageProxy extends Element{
     public void print() {
         loadImage();
         realImage.print();
+    }
+
+    public void accept(Visitor visitor) {
+        visitor.visit(this);
     }
 
 }

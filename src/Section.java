@@ -1,7 +1,7 @@
 import java.util.ArrayList;
 import java.util.List;
 
-public class Section extends Element{
+public class Section implements Element{
     private String sectionTitle;
     private List<Element> content = new ArrayList<>();
 
@@ -22,6 +22,14 @@ public class Section extends Element{
     public void print() {
         for (Element e : this.content) {
             System.out.println(e);
+        }
+    }
+
+    public void accept(Visitor visitor) {
+        visitor.visit(this);
+        for (Element e : this.content)
+        {
+            e.accept(visitor);
         }
     }
 

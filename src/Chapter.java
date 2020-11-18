@@ -1,6 +1,6 @@
 import java.util.ArrayList;
 
-public class Chapter extends Element{
+public class Chapter implements Element{
     private String name;
     private ArrayList<SubChapter> subChapters = new ArrayList<SubChapter>();
 
@@ -21,5 +21,9 @@ public class Chapter extends Element{
     public SubChapter getSubChapter(int index)
     {
         return this.subChapters.get(index);
+    }
+
+    public void accept(Visitor visitor) {
+        visitor.visit(this);
     }
 }
