@@ -44,3 +44,5 @@ ro/uvt/models/Table.java
  ro.uvt.models.Table
 ro/uvt/models/Image.java
  ro.uvt.models.Image
+ro/uvt/controllers/HelloController.java
+ ro.uvt.controllers.HelloController
