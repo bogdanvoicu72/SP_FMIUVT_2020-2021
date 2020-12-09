@@ -1,9 +1,21 @@
 package ro.uvt.models;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
 import java.util.concurrent.TimeUnit;
 
+@Entity
 public class Image implements Element{
+    @Column
     private String imageName;
+    @Id @GeneratedValue
+    private String id;
+
+    public Image() {
+
+    }
 
     public void print()
     {
@@ -23,4 +35,12 @@ public class Image implements Element{
         visitor.visit(this);
     }
 
+    public void setId(String id) {
+        this.id = id;
+    }
+
+    @Id
+    public String getId() {
+        return id;
+    }
 }
